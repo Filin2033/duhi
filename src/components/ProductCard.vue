@@ -1,19 +1,19 @@
 <template>
   <div class="card d-flex-column">
     <div class="img d-flex j-c">
-      <img :src="`src/assets/${imageUrl}`" :alt="productName">
+      <img :src="`src/assets/${imageUrl}`" :alt="product.name">
     </div>
     
     <div class="info">
 
       <div class="info-name d-flex-column align-flex-start">
-        <span class="category">{{ productCategory }}</span>
-        <span class="name">{{ productName }}</span>
+        <span class="category">{{ product.category }}</span>
+        <span class="name">{{ product.name }}</span>
       </div>
       <div class="pay d-flex-row j-sb">
         <div class="info-price d-flex align-flex-end ">
-          <span class="new-price">{{ newPrice }}</span>
-          <span class="old-price" v-if="oldPrice">{{ oldPrice }}</span>
+          <span class="new-price">{{ product.price }}</span>
+          <span class="old-price" v-if="product.oldPrice">{{ product.oldPrice }}</span>
         </div>
 
         <div class="btn-pay">
@@ -33,24 +33,8 @@ import '../global.css';
 
 export default {
   props: {
-    imageUrl: {
-      type: String,
-      required: true
-    },
-    productCategory: {
-      type: String,
-      required: true
-    },
-    productName: {
-      type: String,
-      default: '' 
-    },
-    oldPrice: {
-      type: [String, Number],
-      default: null
-    },
-    newPrice: {
-      type: [String, Number],
+    product: {
+      type: Object,
       required: true
     }
   }
