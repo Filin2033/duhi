@@ -75,12 +75,6 @@ img {
 .old-price {
   text-decoration: line-through;
   color: #999;
-  width: 47px;
-  height: 15px;
-  top: 446px;
-  left: 151px;
-  gap: 0px;
-  opacity: 0px;
   font-family: Anselm Sans;
   font-size: 12px;
   font-weight: 400;
@@ -95,12 +89,6 @@ img {
   font-weight: 400;
   line-height: 15.43px;
   text-align: center;
-  width: 47px;
-  height: 15px;
-  top: 446px;
-  left: 93px;
-  gap: 0px;
-  opacity: 0px;
 }
 .info-name {
   gap: 4px;
