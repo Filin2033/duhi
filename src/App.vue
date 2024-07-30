@@ -1,28 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="product-list d-flex"> 
+      <ProductCard 
+        v-for="product in products"
+        :key="product.id" 
+        :image-url="product.imageUrl"
+        :product-category="product.category"
+        :product-name="product.name"
+        :old-price="product.oldPrice"
+        :new-price="product.price"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProductCard from './components/ProductCard.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    ProductCard
+  },
+  data() {
+    return {
+      products: [
+        {
+          id: 1,
+          imageUrl: '123.png', 
+          category: 'ПАРФЮМЕРНЫЙ ЭКСТРАКТ',
+          name: 'FRAGRANCE DU BOIS HERITAGE',
+          oldPrice: '2500₽',
+          price: '1990₽'
+        }
+      ]
+    };
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import './global.css'; 
+
+.product-list {
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 </style>
